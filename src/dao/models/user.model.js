@@ -1,15 +1,15 @@
 import mongoose from 'mongose'
 
-const collection = 'Orders'
+const collection = 'Users'
 const schema = new mongoose.Schema({
-    number: String,
     name: String,
-    name: String,
+    email: String,
+    role: String,
     orders: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Orders'
     }]
 })
 
-const userModel = mongoose.model(collection. schema)
+const usersModel = mongoose.model(collection, schema)
 export default usersModel

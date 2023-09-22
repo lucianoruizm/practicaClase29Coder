@@ -2,14 +2,18 @@ import mongoose from 'mongose'
 
 const collection = 'Orders'
 const schema = new mongoose.Schema({
-    number: String,
-    name: String,
-    name: String,
-    orders: [{
+    number: Number,
+    business: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Orders'
-    }]
+        ref: 'Business'
+    },
+    user: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Users'
+    },
+    products: [],
+    totalPrice: Number
 })
 
-const userModel = mongoose.model(collection. schema)
-export default usersModel
+const orderModel = mongoose.model(collection, schema)
+export default orderModel
